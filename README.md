@@ -33,7 +33,7 @@ python -m venv venv
 You need to turn the virtual environment "on".
 - **On Windows:**
   ```bash
-  venv\Scripts\activate
+  .venv\Scripts\activate
   ```
 - **On Mac/Linux:**
   ```bash
