@@ -57,7 +57,7 @@ JSON_SCHEMA = """
   "warnings": [
     { "code": "string", "field": "string or null", "message": "string" }
   ],
-  "document": { "page_count": "number", "ocr_applied": "boolean", "language": "string" }
+  "document": { "page_count": "number", "ocr_applied": false, "language": "string" }
 }
 """
 
@@ -115,6 +115,7 @@ async def extract_information(file: UploadFile = File(...)):
         Please analyze the following document text and extract the required fields.
         Return the result strictly as a JSON object matching the schema below.
         Do NOT wrap the JSON in markdown code blocks. Just output raw JSON.
+        Note: OCR is not applied in this pipeline, so always set "ocr_applied" to false.
 
         Required JSON Schema:
         {JSON_SCHEMA}
